@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { ArticleLayout } from "@/components/ArticleLayout";
-import { MdxContent } from "@/components/MdxContent";
+import { ArticleMdxBody } from "@/components/ArticleMdxBody";
 import { getArticleBySlug, getArticleSlugs } from "@/lib/articles";
 import { serializeMdx } from "@/lib/mdx";
 
@@ -28,15 +28,16 @@ export default async function ArticlePage({ params }: Props) {
         </div>
       </nav>
       <ArticleLayout
-      title={article.meta.title}
-      surahName={article.meta.surahName}
-      ayat={article.meta.ayat}
-      videoUrl={article.meta.videoUrl}
-      audioUrl={article.meta.audioUrl}
-      imageUrl={article.meta.imageUrl}
-    >
-      <MdxContent source={mdxSource} />
-    </ArticleLayout>
+        title={article.meta.title}
+        surahName={article.meta.surahName}
+        ayat={article.meta.ayat}
+        videoUrl={article.meta.videoUrl}
+        audioUrl={article.meta.audioUrl}
+        imageUrl={article.meta.imageUrl}
+        paragraphTimestamps={article.meta.paragraphTimestamps}
+      >
+        <ArticleMdxBody source={mdxSource} />
+      </ArticleLayout>
     </>
   );
 }
