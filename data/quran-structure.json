@@ -1,7 +1,10 @@
 {
   "surahs": [
-    { "number": 1, "nameUrdu": "الفاتحہ", "nameArabic": "الفاتحة", "ayas": 7 },
-    { "number": 2, "nameUrdu": "البقرۃ", "nameArabic": "البقرة", "ayas": 286 },
-    { "number": 3, "nameUrdu": "آل عمران", "nameArabic": "آل عمران", "ayas": 200 }
+    {
+      "number": 58,
+      "nameUrdu": "المجادلۃ",
+      "nameArabic": "المجادلة",
+      "ayas": 22
+    }
   ]
 }
