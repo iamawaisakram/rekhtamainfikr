@@ -2,8 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Uthmanic Script (KFGQPC HAFS) for Quranic Arabic */
+@font-face {
+  font-family: "KFGQPC Uthmanic Script";
+  src: url("https://cdn.jsdelivr.net/npm/kfgqpc-uthmanic-script-hafs-regular@1.0.0/arabic.otf")
+    format("opentype");
+  font-display: swap;
+}
+
 :root {
   --font-urdu: "Noto Nastaliq Urdu", serif;
+  --font-arabic: "KFGQPC Uthmanic Script", "Traditional Arabic", serif;
 }
 
 /* RTL base for article content */
@@ -11,11 +20,17 @@
   text-align: right;
 }
 
-/* Urdu reading typography */
+/* Urdu / Nastaleeq typography */
 .font-urdu {
   font-family: var(--font-urdu);
   line-height: 1.9;
   letter-spacing: 0.02em;
+}
+
+/* Uthmanic for Quranic Arabic text */
+.font-arabic {
+  font-family: var(--font-arabic);
+  line-height: 1.6;
 }
 
 /* Print: article only, RTL preserved */

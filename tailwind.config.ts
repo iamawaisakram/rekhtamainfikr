@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         urdu: ["var(--font-urdu)", "Noto Nastaliq Urdu", "serif"],
+        arabic: ["var(--font-arabic)", "KFGQPC Uthmanic Script", "serif"],
       },
     },
   },
