@@ -1,6 +1,6 @@
 "use client";
 
-import { getDriveDownloadUrl } from "@/lib/drive";
+import { getDriveDownloadUrl, hasValidMediaUrl } from "@/lib/drive";
 
 type DownloadBarProps = Readonly<{
   videoUrl?: string;
@@ -50,8 +50,8 @@ function PdfIcon({ className }: { className?: string }) {
 }
 
 export function DownloadBar({ videoUrl, audioUrl }: DownloadBarProps) {
-  const videoDownloadUrl = videoUrl ? getDriveDownloadUrl(videoUrl) : null;
-  const audioDownloadUrl = audioUrl ? getDriveDownloadUrl(audioUrl) : null;
+  const videoDownloadUrl = hasValidMediaUrl(videoUrl) ? getDriveDownloadUrl(videoUrl) : null;
+  const audioDownloadUrl = hasValidMediaUrl(audioUrl) ? getDriveDownloadUrl(audioUrl) : null;
 
   const handlePrintPdf = () => {
     globalThis.print();

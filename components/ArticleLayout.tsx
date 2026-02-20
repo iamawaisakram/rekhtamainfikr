@@ -4,6 +4,7 @@ import { useRef } from "react";
 
 import { DownloadBar } from "@/components/DownloadBar";
 import { ArticleAudioProvider } from "@/context/ArticleAudioContext";
+import { hasValidMediaUrl } from "@/lib/drive";
 
 type ArticleLayoutProps = Readonly<{
   title: string;
@@ -52,7 +53,7 @@ export function ArticleLayout({
             <DownloadBar videoUrl={videoUrl} audioUrl={audioUrl} />
           </section>
 
-          {videoUrl && (
+          {hasValidMediaUrl(videoUrl) && (
             <section className="no-print overflow-hidden rounded-xl border border-stone-200 bg-stone-100">
               <div className="aspect-video w-full">
                 <iframe
@@ -66,7 +67,7 @@ export function ArticleLayout({
             </section>
           )}
 
-          {audioUrl && (
+          {hasValidMediaUrl(audioUrl) && (
             <section className="no-print rounded-xl border border-stone-200 bg-white p-4 shadow-sm">
               <p className="mb-2 text-sm font-medium text-stone-600">
                 پورا مضمون سنیں
