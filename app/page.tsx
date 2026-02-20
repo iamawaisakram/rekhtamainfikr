@@ -1,6 +1,6 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-import { getArticleSlugs, getSurahs } from "@/lib/articles";
+import { getArticleSlugs, getSurahs } from '@/lib/articles';
 
 export default function HomePage() {
   const surahs = getSurahs();
@@ -10,11 +10,9 @@ export default function HomePage() {
     <div className="mx-auto max-w-2xl px-4 py-8" dir="rtl">
       <header className="mb-10 text-center">
         <h1 className="font-urdu text-3xl font-semibold text-stone-800">
-          ریکھٹہ مین فکر
+          ریختہ میں فکر
         </h1>
-        <p className="mt-2 text-stone-600">
-          قرآن کی آیات پر اردو میں خیالات
-        </p>
+        <p className="mt-2 text-stone-600">قرآن کی آیات پر اردو میں خیالات</p>
       </header>
 
       <nav className="space-y-4">
@@ -31,7 +29,7 @@ export default function HomePage() {
                   {meta.surahName && (
                     <span className="mr-2 text-sm text-stone-500">
                       — {meta.surahName}
-                      {meta.ayat != null ? `، آیت ${meta.ayat}` : ""}
+                      {meta.ayat == null ? '' : `، آیت ${meta.ayat}`}
                     </span>
                   )}
                 </Link>
