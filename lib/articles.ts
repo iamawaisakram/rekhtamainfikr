@@ -61,3 +61,7 @@ export function getSurahs(): {
     }
   ).surahs;
 }
+
+export function getArticlesBySurah(surahNumber: number): { slug: string; meta: ArticleMeta }[] {
+  return getArticleSlugs().filter((a) => a.meta.surah === surahNumber);
+}
