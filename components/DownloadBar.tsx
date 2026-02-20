@@ -87,7 +87,12 @@ export function DownloadBar({ videoUrl, audioUrl }: DownloadBarProps) {
           آڈیو
         </a>
       )}
-      <button type="button" onClick={handlePrintPdf} className={linkClass}>
+      <button
+        type="button"
+        onClick={handlePrintPdf}
+        className={linkClass}
+        title="پڈی ایف کے لیے: Save as PDF چنیں، A4، Portrait، 1 صفحہ فی شیٹ۔ Headers and footers اور Background graphics بند رکھیں۔"
+      >
         <PdfIcon className="h-4 w-4" />
         PDF
       </button>
